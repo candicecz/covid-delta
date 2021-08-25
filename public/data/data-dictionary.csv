@@ -1,0 +1,11 @@
+﻿variable,description
+date,Date of sample collection
+total_count,"Total number of sequences sequenced in that location on that date. Note that this includes ALL lineages found in the location on that date, not just the Delta lineages"
+lineage_count,Total number of sequences assigned to the given Pango lineage in that location on that date
+total_count_rolling,7-day rolling average of total_count
+lineage_count_rolling,7-day rolling average of lineage_count
+proportion,Propoortion of the sequences from that date in that location which have been assigned to that lineage
+proportion_ci_lower,Lower bound of a 95% confidence interval calculated using Jeffrey's interval
+proportion_ci_upper,Upper bound of a 95% confidence interval calculated using Jeffrey's interval
+lineage,Pango lineage name
+location,"Location ID; USA = United States national data; USA_US-X is U.S. state-level data, where X is the 2 letter ISO code / state abbreviation"
