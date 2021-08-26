@@ -1,0 +1,393 @@
+{
+  "AL": {
+    "dates": [
+      {
+        "start": "2020-07-16",
+        "end": "2021-04-09"
+      }
+    ],
+    "details": ""
+  },
+  "AK": {"dates": [], "details": ""},
+  "AZ": {"dates": [], "details": ""},
+  "AR": {
+    "dates": [
+      {
+        "start": "2020-07-20",
+        "end": "2021-03-30"
+      }
+    ],
+    "details": ""
+  },
+  "CA": {
+    "dates": [
+      {
+        "start": "2020-07-18",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "CO": {
+    "dates": [
+      {
+        "start": "2020-07-17",
+        "end": "2021-05-14"
+      }
+    ],
+    "details": ""
+  },
+  "CT": {
+    "dates": [
+      {
+        "start": "2020-04-17",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "DE": {
+    "dates": [
+      {
+        "start": "2020-05-01",
+        "end": "2021-05-21"
+      }
+    ],
+    "details": ""
+  },
+  "DC": {
+    "dates": [
+      {
+        "start": "2020-04-08",
+        "end": "2021-05-17"
+      },
+      {
+        "start": "2021-07-31",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "FL": {"dates": [], "details": ""},
+  "GA": {"dates": [], "details": ""},
+  "HI": {
+    "dates": [
+      {
+        "start": "2020-04-20",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "ID": {"dates": [], "details": ""},
+  "IL": {
+    "dates": [
+      {
+        "start": "2020-05-01",
+        "end": "2021-06-11"
+      }
+    ],
+    "details": ""
+  },
+  "IN": {
+    "dates": [
+      {
+        "start": "2020-07-27",
+        "end": "2021-04-06"
+      }
+    ],
+    "details": ""
+  },
+  "IA": {
+    "dates": [
+      {
+        "start": "2020-11-17",
+        "end": "2021-02-07"
+      }
+    ],
+    "details": ""
+  },
+  "KS": {
+    "dates": [
+      {
+        "start": "2020-07-03",
+        "end": "2021-04-01"
+      }
+    ],
+    "details": ""
+  },
+  "KY": {
+    "dates": [
+      {
+        "start": "2020-07-10",
+        "end": "2021-07-11"
+      }
+    ],
+    "details": ""
+  },
+  "LA": {
+    "dates": [
+      {
+        "start": "2020-07-13",
+        "end": "2021-04-28"
+      },
+      {
+        "start": "2021-08-02",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "ME": {
+    "dates": [
+      {
+        "start": "2020-05-01",
+        "end": "2021-05-24"
+      }
+    ],
+    "details": ""
+  },
+  "MD": {
+    "dates": [
+      {
+        "start": "2020-04-18",
+        "end": "2021-05-15"
+      }
+    ],
+    "details": ""
+  },
+  "MA": {
+    "dates": [
+      {
+        "start": "2020-05-06",
+        "end": "2021-05-29"
+      }
+    ],
+    "details": ""
+  },
+  "MI": {
+    "dates": [
+      {
+        "start": "2020-04-26",
+        "end": "2021-06-22"
+      }
+    ],
+    "details": ""
+  },
+  "MN": {
+    "dates": [
+      {
+        "start": "2020-07-25",
+        "end": "2021-05-14"
+      }
+    ],
+    "details": ""
+  },
+  "MS": {
+    "dates": [
+      {
+        "start": "2020-08-05",
+        "end": "2020-09-30"
+      }
+    ],
+    "details": "Shortest mask mandate to date."
+  },
+  "MO": {"dates": [], "details": ""},
+  "MT": {
+    "dates": [
+      {
+        "start": "2020-07-15",
+        "end": "2021-02-12"
+      }
+    ],
+    "details": ""
+  },
+  "NE": {"dates": [], "details": ""},
+  "NV": {
+    "dates": [
+      {
+        "start": "2020-06-25",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "NH": {
+    "dates": [
+      {
+        "start": "2020-11-20",
+        "end": "2021-04-16"
+      }
+    ],
+    "details": ""
+  },
+  "NJ": {
+    "dates": [
+      {
+        "start": "2020-04-10",
+        "end": "2021-05-28"
+      }
+    ],
+    "details": ""
+  },
+  "NM": {
+    "dates": [
+      {
+        "start": "2020-05-15",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "NY": {
+    "dates": [
+      {
+        "start": "2020-04-15",
+        "end": null
+      }
+    ],
+    "details": "Longest mask mandate to date."
+  },
+  "NC": {
+    "dates": [
+      {
+        "start": "2020-06-26",
+        "end": "2021-05-14"
+      }
+    ],
+    "details": ""
+  },
+  "ND": {
+    "dates": [
+      {
+        "start": "2020-11-14",
+        "end": "2021-01-18"
+      }
+    ],
+    "details": ""
+  },
+  "OH": {
+    "dates": [
+      {
+        "start": "2020-07-23",
+        "end": "2021-06-02"
+      }
+    ],
+    "details": ""
+  },
+  "OK": {"dates": [], "details": ""},
+  "OR": {
+    "dates": [
+      {
+        "start": "2020-07-01",
+        "end": "2021-06-30"
+      },
+      {
+        "start": "2021-08-13",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "PA": {
+    "dates": [
+      {
+        "start": "2020-04-17",
+        "end": "2021-06-28"
+      }
+    ],
+    "details": ""
+  },
+  "RI": {
+    "dates": [
+      {
+        "start": "2020-04-20",
+        "end": "2021-07-06"
+      }
+    ],
+    "details": ""
+  },
+  "SC": {
+    "dates": [
+      {
+        "start": "2020-08-05",
+        "end": "2021-03-05"
+      }
+    ],
+    "details": ""
+  },
+  "SD": {"dates": [], "details": ""},
+  "TN": {"dates": [], "details": ""},
+  "TX": {
+    "dates": [
+      {
+        "start": "2020-07-03",
+        "end": "2021-03-10"
+      }
+    ],
+    "details": ""
+  },
+  "UT": {
+    "dates": [
+      {
+        "start": "2020-11-09",
+        "end": "2021-04-10"
+      }
+    ],
+    "details": ""
+  },
+  "VT": {
+    "dates": [
+      {
+        "start": "2020-08-01",
+        "end": "2021-06-14"
+      }
+    ],
+    "details": ""
+  },
+  "VA": {
+    "dates": [
+      {
+        "start": "2020-05-29",
+        "end": "2021-05-15"
+      }
+    ],
+    "details": ""
+  },
+  "WA": {
+    "dates": [
+      {
+        "start": "2020-06-26",
+        "end": null
+      }
+    ],
+    "details": ""
+  },
+  "WV": {
+    "dates": [
+      {
+        "start": "2020-07-7",
+        "end": "2021-06-20"
+      }
+    ],
+    "details": ""
+  },
+  "WI": {
+    "dates": [
+      {
+        "start": "2020-08-01",
+        "end": "2021-03-31"
+      }
+    ],
+    "details": ""
+  },
+  "WY": {
+    "dates": [
+      {
+        "start": "2020-12-09",
+        "end": "2021-03-16"
+      }
+    ],
+    "details": ""
+  }
+}

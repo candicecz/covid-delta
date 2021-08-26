@@ -1,25 +1,18 @@
 import type {NextPage} from "next";
-import {useState} from "react";
+import React, {useState} from "react";
 import Head from "next/head";
-import * as d3 from "d3";
 import raw_data from "public/data/usa-delta-prevalence.csv";
-import {Box} from "@chakra-ui/react";
 import _ from "lodash";
+import {Box} from "@chakra-ui/react";
 import {ChoroplethMap, Header, PageLayout, Timeline} from "src/components";
-import {LocationDataProps, get_processed_data} from "src/helpers/data";
-
-interface DataProps {
-  date: string;
-  entries: LocationDataProps[];
-}
+import {processMapData} from "src/helpers/data";
 
 const Home: NextPage = () => {
   // Represents the position in the data that is currently on display.
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const data = get_processed_data(raw_data).sort(
-    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-  );
+  // Shape a raw data.
+  const {data} = processMapData(raw_data);
 
   return (
     <div>
@@ -33,7 +26,7 @@ const Home: NextPage = () => {
         <PageLayout>
           <Header />
           <Box m={4}>
-            <ChoroplethMap />
+            <ChoroplethMap data={data} currentIndex={currentIndex} />
             <Timeline
               label={data[currentIndex].date}
               min={0}

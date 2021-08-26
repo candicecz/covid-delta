@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   Slider as ChakraSlider,
   SliderTrack,
@@ -25,7 +25,14 @@ const Timeline: React.FC<TimelineProps> = ({
   defaultValue,
   setCurrentIndex,
 }) => {
-  return (
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
+  return !mounted ? null : (
     <StyledTimeline>
       <ChakraSlider
         defaultValue={defaultValue}
