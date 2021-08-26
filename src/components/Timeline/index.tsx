@@ -18,6 +18,9 @@ interface TimelineProps {
   setCurrentIndex: (arg: number) => void;
 }
 
+/*
+ Scrollable timeline component to control date displayed.
+*/
 const Timeline: React.FC<TimelineProps> = ({
   label,
   min,
@@ -46,7 +49,7 @@ const Timeline: React.FC<TimelineProps> = ({
         </SliderTrack>
         <SliderThumb boxSize={6}>
           <Box color="red.400" as={IoMdCalendar} />
-          <Box position="absolute" top={"-110%"}>
+          <Box position="absolute" top={"-120%"}>
             <Text
               pb={4}
               whiteSpace={"nowrap"}

@@ -10,6 +10,7 @@ const theme: any = {
   colors: {
     primary: "#9F7AEA",
     secondary: "#283549",
+    disabled: "#EFEFEF",
     bg: "#F8F8F8",
     text: {default: "gray.500", alt: "#525B6C"},
   },

@@ -5,15 +5,18 @@ import raw_data from "public/data/usa-delta-prevalence.csv";
 import _ from "lodash";
 import {Box} from "@chakra-ui/react";
 import {ChoroplethMap, Header, PageLayout, Timeline} from "src/components";
-import {processMapData} from "src/helpers/data";
+import {processRawData, processMapVizData} from "src/helpers/data";
 
 const Home: NextPage = () => {
   // Represents the position in the data that is currently on display.
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Shape a raw data.
-  const {data} = processMapData(raw_data);
+  // Shape raw data.
+  const {data} = processRawData(raw_data);
 
+  // Viz specific data.
+  const vizData = processMapVizData(data);
+  console.log(data);
   return (
     <div>
       <Head>
@@ -26,7 +29,7 @@ const Home: NextPage = () => {
         <PageLayout>
           <Header />
           <Box m={4}>
-            <ChoroplethMap data={data} currentIndex={currentIndex} />
+            <ChoroplethMap data={vizData[currentIndex]} />
             <Timeline
               label={data[currentIndex].date}
               min={0}

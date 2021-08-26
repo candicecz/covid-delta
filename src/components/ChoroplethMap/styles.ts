@@ -5,7 +5,7 @@ export const StyledChoroplethMap = styled(Flex)``;
 
 StyledChoroplethMap.defaultProps = {
   p: 4,
-  maxWidth: 1200,
+  maxWidth: 800,
   margin: "0 auto",
   flexDirection: "column",
 };

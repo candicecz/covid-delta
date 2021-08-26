@@ -1,6 +1,8 @@
 import _ from "lodash";
+import * as d3 from "d3";
 import population from "public/data/usa-population.json";
 import mask_mandates from "public/data/usa-mask.json";
+import theme from "src/theme";
 
 export type LineageProps = {
   "AY.1": number;
@@ -61,8 +63,8 @@ export const groupByDate = (data: csvRow[]) => {
   );
 };
 
-// Format the results for map viz.
-export const processMapData = (raw: csvRow[]) => {
+// Clean up + structure of raw data for map viz.
+export const processRawData = (raw: csvRow[]) => {
   let processed = groupByDate(raw).map(([date, group]) => {
     return {
       date,
@@ -102,6 +104,68 @@ export const processMapData = (raw: csvRow[]) => {
   return {
     data: processed,
   };
+};
+
+export interface VizPropertiesProps {
+  date: string;
+  location: string;
+  colorValue: number;
+  fill: string[];
+  totalDeltaCountRollingPerCapita: number;
+  totalDeltaCountRolling: number;
+}
+
+export interface VizDataProps {
+  date: string;
+  data: VizPropertiesProps[];
+}
+
+// Viz specific data processing.
+export const processMapVizData = (data: MapDataProps[]): VizDataProps[] => {
+  // Min and max values for color scale.
+  const colorScaleExtent = getMapMinMax(data, "totalDeltaCountRollingPerCapita")
+    .map(d => {
+      if (!d?.totalDeltaCountRollingPerCapita) {
+        return 0;
+      }
+      return Math.ceil(d.totalDeltaCountRollingPerCapita);
+    })
+    .reverse();
+
+  const colorScale = (data: number): string =>
+    d3
+      .scaleSequential()
+      .domain(colorScaleExtent)
+      .interpolator(d3.interpolatePlasma)(data);
+
+  // Format data with visualization values. (Nationwide result filtered out - not needed)
+  return data.map(daily_data => {
+    return {
+      date: daily_data.date,
+      data: daily_data.data
+        .filter(datum => datum.location !== "USA")
+        .map(
+          ({
+            date,
+            location,
+            totalDeltaCountRollingPerCapita,
+            totalDeltaCountRolling,
+          }) => {
+            return {
+              date,
+              location,
+              colorValue: Math.ceil(totalDeltaCountRollingPerCapita),
+              fill: [
+                colorScale(Math.ceil(totalDeltaCountRollingPerCapita)) ||
+                  theme.colors.disabled,
+              ],
+              totalDeltaCountRollingPerCapita,
+              totalDeltaCountRolling,
+            };
+          },
+        ),
+    };
+  });
 };
 
 // Returns min and max value of a given property. Optional: boolean to omit nationwide data from results.

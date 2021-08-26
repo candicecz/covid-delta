@@ -1,14 +1,13 @@
 import React from "react";
-import {Box, Flex, Text} from "@chakra-ui/react";
+import {Flex, Text} from "@chakra-ui/react";
 
 interface ChoroplethHeaderProps {}
 
+/* Title Header for Choropleth Viz*/
 const ChoroplethHeader: React.FC<ChoroplethHeaderProps> = () => {
   return (
     <Flex justifyContent={"center"}>
-      <Text textStyle={"subheading"}>
-        Cumulative total of delta variant cases nation-wide
-      </Text>
+      <Text textStyle={"subheading"}>Total Sequenced Delta Variant Cases </Text>
     </Flex>
   );
 };
