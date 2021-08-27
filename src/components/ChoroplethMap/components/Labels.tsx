@@ -1,13 +1,14 @@
 import React from "react";
 import {Box, Heading} from "@chakra-ui/react";
 import {AlbersUsa} from "@visx/geo";
-import {StyledMapLabel} from "../styles";
+import {MapDataProps} from "src/helpers/data";
+import theme from "src/theme";
 import {unitedStates, getFeatureProperties} from "./Map";
-import {VizPropertiesProps} from "src/helpers/data";
+import {StyledMapLabel} from "../styles";
 
 // Values(in percent) to translate labels for states with too small a geographical area.
 const coordsOutside: Record<string, number[]> = {
-  VT: [-8, -150],
+  VT: [-5, -120],
   MA: [180, -50],
   RI: [50, 70],
   NJ: [120, 0],
@@ -27,10 +28,12 @@ const ChoroplethMapLabels = ({
   width,
   height,
   data,
+  colorScale,
 }: {
   width: number;
   height: number;
-  data: VizPropertiesProps[];
+  data: MapDataProps[];
+  colorScale: d3.ScaleSequential<string, never>;
 }) => {
   return (
     <AlbersUsa
@@ -48,6 +51,12 @@ const ChoroplethMapLabels = ({
             lt: "#fff",
           };
           const state_data = data.findIndex(d => d.location === abbr);
+          const fill =
+            state_data < 0
+              ? theme.colors.disabled
+              : colorScale(
+                  Math.ceil(data[state_data].totalDeltaCountRollingPerCapita),
+                );
 
           if (!coords) {
             return;
@@ -69,9 +78,12 @@ const ChoroplethMapLabels = ({
                     : 0
                 }%)`}
                 bg={
-                  !data[state_data] || Object.keys(coordsOutside).includes(abbr)
+                  !data[state_data] &&
+                  !Object.keys(coordsOutside).includes(abbr)
+                    ? theme.colors.disabled
+                    : Object.keys(coordsOutside).includes(abbr)
                     ? "transparent"
-                    : data[state_data]["fill"]
+                    : fill
                 }
                 p={0.5}
               >
@@ -80,7 +92,9 @@ const ChoroplethMapLabels = ({
                   color={
                     Object.keys(coordsOutside).includes(abbr) ||
                     !data[state_data] ||
-                    data[state_data].colorValue < 1
+                    Math.ceil(
+                      data[state_data].totalDeltaCountRollingPerCapita,
+                    ) < 1
                       ? labelColors.dk
                       : labelColors.lt
                   }

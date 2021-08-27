@@ -5,7 +5,11 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <Box bgGradient="linear(to-b,#5876a2 0%, secondary)" p={[4, 10]}>
+    <Box
+      bgGradient="linear(to-b,#5876a2 0%, secondary)"
+      px={[4, 10, 10, "10%"]}
+      py={[4, 10, 10, 20]}
+    >
       <Text mb={4} textStyle={"heading"}>
         Do mask mandates help prevent the spread of the Delta variant?
       </Text>

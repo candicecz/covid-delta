@@ -38,6 +38,11 @@ const theme: any = {
       color: "gray.500",
       letterSpacing: "0.04em",
     },
+    tooltip: {
+      color: "gray.600",
+      letterSpacing: "0.04em",
+      fontSize: "xs",
+    },
   },
 };
 

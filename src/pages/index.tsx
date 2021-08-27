@@ -1,22 +1,19 @@
 import type {NextPage} from "next";
-import React, {useState} from "react";
+import React, {useMemo, useState} from "react";
 import Head from "next/head";
 import raw_data from "public/data/usa-delta-prevalence.csv";
 import _ from "lodash";
-import {Box} from "@chakra-ui/react";
+import {Box, Flex} from "@chakra-ui/react";
 import {ChoroplethMap, Header, PageLayout, Timeline} from "src/components";
-import {processRawData, processMapVizData} from "src/helpers/data";
+import {processRawData} from "src/helpers/data";
 
 const Home: NextPage = () => {
   // Represents the position in the data that is currently on display.
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Shape raw data.
-  const {data} = processRawData(raw_data);
+  const {data} = useMemo(() => processRawData(raw_data), []);
 
-  // Viz specific data.
-  const vizData = processMapVizData(data);
-  console.log(data);
   return (
     <div>
       <Head>
@@ -28,16 +25,20 @@ const Home: NextPage = () => {
       <main>
         <PageLayout>
           <Header />
-          <Box m={4}>
-            <ChoroplethMap data={vizData[currentIndex]} />
-            <Timeline
-              label={data[currentIndex].date}
-              min={0}
-              max={data.length - 1}
-              defaultValue={currentIndex}
-              setCurrentIndex={setCurrentIndex}
-            />
-          </Box>
+          <Flex m={4} justifyContent={"center"}>
+            <Box width={"100%"}>
+              <ChoroplethMap data={data} currentIndex={currentIndex} />
+              <Box px={[4, 1, 10, "10%"]} pt={[4, 10]}>
+                <Timeline
+                  label={data[currentIndex].date}
+                  min={0}
+                  max={data.length - 1}
+                  defaultValue={currentIndex}
+                  setCurrentIndex={setCurrentIndex}
+                />
+              </Box>
+            </Box>
+          </Flex>
         </PageLayout>
       </main>
     </div>
