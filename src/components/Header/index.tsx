@@ -1,13 +1,13 @@
 import React from "react";
-import {Box, Text} from "@chakra-ui/react";
+import {Text} from "@chakra-ui/react";
+import {StyledSection} from "./styles";
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <Box
+    <StyledSection
       bgGradient="linear(to-b,#5876a2 0%, secondary)"
-      px={[4, 10, 10, "10%"]}
       py={[4, 10, 10, 20]}
     >
       <Text mb={4} textStyle={"heading"}>
@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = () => {
         commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        mollit anim id est laborum.
       </Text>
 
       <Text textStyle={"body"} color={"gray.300"} py={4}>
@@ -30,9 +30,9 @@ const Header: React.FC<HeaderProps> = () => {
         commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        mollit anim id est laborum.
       </Text>
-    </Box>
+    </StyledSection>
   );
 };
 

@@ -6,6 +6,6 @@ type StyledTimelineProps = {};
 export const StyledTimeline = styled(Box)<StyledTimelineProps>``;
 
 StyledTimeline.defaultProps = {
-  p: 4,
-  mx: 8,
+  py: 4,
+  px: 8,
 };

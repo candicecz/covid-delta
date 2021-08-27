@@ -3,9 +3,10 @@ import React, {useMemo, useState} from "react";
 import Head from "next/head";
 import raw_data from "public/data/usa-delta-prevalence.csv";
 import _ from "lodash";
-import {Box, Flex} from "@chakra-ui/react";
-import {ChoroplethMap, Header, PageLayout, Timeline} from "src/components";
+import {Box, Flex, Text} from "@chakra-ui/react";
+import {ChoroplethMap, Header, Timeline} from "src/components";
 import {processRawData} from "src/helpers/data";
+import {StyledSection} from "src/components/Header/styles";
 
 const Home: NextPage = () => {
   // Represents the position in the data that is currently on display.
@@ -23,12 +24,12 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <PageLayout>
+        <Box>
           <Header />
           <Flex m={4} justifyContent={"center"}>
             <Box width={"100%"}>
               <ChoroplethMap data={data} currentIndex={currentIndex} />
-              <Box px={[4, 1, 10, "10%"]} pt={[4, 10]}>
+              <StyledSection pt={[4, 10]}>
                 <Timeline
                   label={data[currentIndex].date}
                   min={0}
@@ -36,10 +37,16 @@ const Home: NextPage = () => {
                   defaultValue={currentIndex}
                   setCurrentIndex={setCurrentIndex}
                 />
-              </Box>
+                <Text textStyle={"body"} fontSize={"xs"} mt={2}>
+                  Source: Population data retrieved from 2020 census, U.S.
+                  Census Bureau.
+                  <br />
+                  Source: State mask mandate data retrieved from Ballotpedia.
+                </Text>
+              </StyledSection>
             </Box>
           </Flex>
-        </PageLayout>
+        </Box>
       </main>
     </div>
   );
