@@ -42,7 +42,7 @@ const ChoroplethMap: React.FC<ChoroplethMapProps> = ({data, currentIndex}) => {
               Data is loading, please be patient.
             </Flex>
           ) : width < 430 ? (
-            <Text textStyle={"body"}>
+            <Text textStyle={"body"} m={4}>
               Sorry, you must view this visualization in a larger browser
               window.
             </Text>

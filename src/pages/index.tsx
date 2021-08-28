@@ -1,12 +1,17 @@
 import type {NextPage} from "next";
-import React, {useMemo, useState} from "react";
 import Head from "next/head";
-import raw_data from "public/data/usa-delta-prevalence.csv";
+import React, {useMemo, useState} from "react";
+import {Box, Flex, Link, Text} from "@chakra-ui/react";
 import _ from "lodash";
-import {Box, Flex, Text} from "@chakra-ui/react";
-import {ChoroplethMap, Header, Timeline} from "src/components";
+import {BiLinkExternal} from "react-icons/bi";
+import raw_data from "public/data/usa-delta-prevalence.csv";
+import {
+  ChoroplethMap,
+  Paragraph,
+  StyledSection,
+  Timeline,
+} from "src/components";
 import {processRawData} from "src/helpers/data";
-import {StyledSection} from "src/components/Header/styles";
 
 const Home: NextPage = () => {
   // Represents the position in the data that is currently on display.
@@ -25,10 +30,26 @@ const Home: NextPage = () => {
 
       <main>
         <Box>
-          <Header />
-          <Flex m={4} justifyContent={"center"}>
+          <Paragraph
+            title={
+              "Do mask mandates help prevent the spread of the Delta variant?"
+            }
+            bgGradient="linear(to-b,#5876a2 0%, secondary)"
+          >
+            <Text textStyle={"body"} color={"gray.300"} py={4}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Text>
+          </Paragraph>
+          <Flex mx={4} my={8} justifyContent={"center"}>
             <Box width={"100%"}>
               <ChoroplethMap data={data} currentIndex={currentIndex} />
+
               <StyledSection pt={[4, 10]}>
                 <Timeline
                   label={data[currentIndex].date}
@@ -37,7 +58,9 @@ const Home: NextPage = () => {
                   defaultValue={currentIndex}
                   setCurrentIndex={setCurrentIndex}
                 />
-                <Text textStyle={"body"} fontSize={"xs"} mt={2}>
+              </StyledSection>
+              <StyledSection>
+                <Text textStyle={"body"} fontSize={"xs"} mt={8}>
                   Source: Population data retrieved from 2020 census, U.S.
                   Census Bureau.
                   <br />
@@ -46,6 +69,32 @@ const Home: NextPage = () => {
               </StyledSection>
             </Box>
           </Flex>
+          <Paragraph
+            title={"In Conclusion"}
+            color={"gray.500"}
+            py={[4, 8]}
+            bg={"gray.50"}
+          >
+            <Text textStyle={"body"} color={"gray.500"} py={4}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <br />
+              You can view the code here:{" "}
+              <Link
+                href="https://github.com/candicecz/covid-delta"
+                isExternal
+                color={"red.400"}
+                display={"inline-flex"}
+              >
+                Github Repo <BiLinkExternal style={{margin: "0 0.5rem"}} />
+              </Link>
+            </Text>
+          </Paragraph>
         </Box>
       </main>
     </div>

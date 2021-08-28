@@ -7,7 +7,9 @@ interface ChoroplethHeaderProps {}
 const ChoroplethHeader: React.FC<ChoroplethHeaderProps> = () => {
   return (
     <Flex justifyContent={["flex-start", "flex-start", "center"]}>
-      <Text textStyle={"subheading"}>Total Sequenced Delta Variant Cases </Text>
+      <Text textStyle={"subheading"}>
+        Sequenced Delta Variant Cases Across the United States
+      </Text>
     </Flex>
   );
 };
