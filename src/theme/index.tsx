@@ -8,7 +8,6 @@ const config: ThemeConfig = {
 const theme: any = {
   config,
   colors: {
-    primary: "#9F7AEA",
     secondary: "#283549",
     disabled: "#EFEFEF",
     bg: "#F8F8F8",
