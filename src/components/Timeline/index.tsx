@@ -115,7 +115,7 @@ const Timeline: React.FC<TimelineProps> = ({
           display={"flex"}
           justifyContent={"center"}
         >
-          (The real action start around 2021-03-25)
+          (The real action starts around 2021-03-25)
         </Text>
       </Flex>
     </StyledTimeline>

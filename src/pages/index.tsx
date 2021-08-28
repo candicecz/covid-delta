@@ -36,14 +36,38 @@ const Home: NextPage = () => {
             }
             bgGradient="linear(to-b,#5876a2 0%, secondary)"
           >
-            <Text textStyle={"body"} color={"gray.300"} py={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <Text textStyle={"body"} color={"gray.200"} py={4}>
+              Delta variants are crashing the party we all thought we would be
+              having this time last year. With the emergence of Covid-19 Delta
+              variants, “pandemic life” seems far from over as masks, social
+              distancing and remote work have become the new norm. After viewing
+              the SARS-CoV-2 Delta Variant of Concern data, I wanted to see if
+              there were any trends linking preventative measures (or lack
+              thereof) with the rise in Delta cases.
+              <br />
+              <br />
+              The first step in my approach was to consider all the data I had
+              that I felt helped answer this question and to establish what data
+              was missing. Then, to consider which visualisation medium would
+              best present the data to the reader.
+              <br />
+              <br />
+              For the data, I retrieved the demographic information of each
+              state and decided to use the 7-day rolling average of all Delta
+              lineage cases per capita x 100,000 to mitigate any issues related
+              to population differences. I also retrieved each state’s mask
+              mandate-in-effect dates to determine whether masks were in use in
+              a given location at a given time.
+              <br />
+              <br />
+              For the visualization, the SARS-CoV-2 Delta Variant of Concern
+              data and mask mandate data are time and geographically sensitive,
+              so I opted for the choropleth map using color to represent the
+              average number of Delta cases and I used texture to show mask
+              mandates. I implemented a scrollable (or play-able) timeline so
+              that the reader could navigate easily throughout the surveyed
+              period and see the changes dynamically. I applied a hover tooltip
+              with detailed information for each state for added transparency.
             </Text>
           </Paragraph>
           <Flex mx={4} my={8} justifyContent={"center"}>
@@ -70,21 +94,39 @@ const Home: NextPage = () => {
             </Box>
           </Flex>
           <Paragraph
-            title={"In Conclusion"}
+            title={"Final Thoughts"}
             color={"gray.500"}
             py={[4, 8]}
             bg={"gray.50"}
           >
             <Text textStyle={"body"} color={"gray.500"} py={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              There’s a number of things that could improve this tool if given
+              more time:
               <br />
-              You can view the code here:{" "}
+              <br />
+              In terms of viewing the data, I would add filters that the reader
+              could use to view strain-specific information. Adding a second
+              visualisation with the changing prevalence of each of the
+              different strains over time could provide interesting information
+              and could be simply implemented as a dynamic list.
+              <br />
+              <br />
+              In terms of the data itself, refining the mask mandate information
+              by identifying how the different mandates differ in strictness
+              might offer some valuable insights.
+              <br />
+              <br />
+              In terms of user experience, making the visualisation fully
+              responsive and viewable on mobile is a key missing feature. The
+              labels of states with small areas should either have a line
+              linking them to the state or be clearer in some other way. I would
+              also next implement annotations to the choropleth map that display
+              information of significance to the user so that as they’re
+              scrolling through the timeline, notes with important insights pop
+              up.
+              <br />
+              <br />
+              To view the code, pop on over to:{" "}
               <Link
                 href="https://github.com/candicecz/covid-delta"
                 isExternal
@@ -94,6 +136,7 @@ const Home: NextPage = () => {
                 Github Repo <BiLinkExternal style={{margin: "0 0.5rem"}} />
               </Link>
             </Text>
+            <Box p={[0, 0, 4, 10]}></Box>
           </Paragraph>
         </Box>
       </main>

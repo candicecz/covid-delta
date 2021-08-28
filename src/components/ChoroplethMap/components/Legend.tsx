@@ -30,7 +30,7 @@ const Legend: React.FC<LegendProps> = ({colorScale}) => {
     <Box m={[2, 2, 10]}>
       <Box>
         <Text textStyle={"subheading"} fontSize={"md"}>
-          Daily sequenced Delta cases per capita:
+          Average Delta cases sequenced per capita:
         </Text>
         <Text mb={2} textStyle={"body"} fontSize={"xs"}>
           (7 day rolling average per 100 000 people)
