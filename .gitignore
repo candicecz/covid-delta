@@ -37,3 +37,7 @@ yarn-error.log*
 .prettierrc
 
 /notes.txt
+
+public/data/data-dictionary.csv
+
+public/data/usa-delta-prevalence.csv
